@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/31b3a4ba31.js" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="main-container">
+        <section class="left">
+            <h1 class="title">Tic Tac Toe</h1>
+            <div class="player-box" id="player1">
+                <p>Player <span id="player1name"></span> </p>
+                <p>Token <span id="player1token"></span></p>
+            </div>
+            <div class="player-box" id="player2">
+                <p>Player <span id="player2name"></span> </p>
+                <p>Token <span id="player2token"></span></p>
+            </div>
+
+            <div class="button-wrapper">
+                <button id="restart-btn"><i class="fas fa-undo"></i></button>
+                <button id="menu-btn">menu</button>
+            </div>
+        </section>
+        <section class="right">
+            <div class="board-wrapper" id="gameboard">
+                <div class="tile" id="tile1"></div>
+                <div class="tile" id="tile2"></div>
+                <div class="tile" id="tile3"></div>
+                <div class="tile" id="tile4"></div>
+                <div class="tile" id="tile5"></div>
+                <div class="tile" id="tile6"></div>
+                <div class="tile" id="tile7"></div>
+                <div class="tile" id="tile8"></div>
+                <div class="tile" id="tile9"></div>
+            </div>
+        </section>
+    </div>
+</body>
+
+<script src="index.js"></script>
+
+</html>
