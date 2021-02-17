@@ -9,20 +9,47 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/31b3a4ba31.js" crossorigin="anonymous"></script>
-    <title>Document</title>
+    <title>Tic Tac Toe</title>
 </head>
 
 <body>
+    <div class="menu-container" id="menu-modal">
+        <div class="menu-box">
+            <h1 class="title">Tic Tac Toe</h1>
+            <p class="normal-text">Choose your opponent:</p>
+            <div class="button-wrapper">
+                <button id="player"><i class="fas fa-user fa-2x"></i></button>
+                <button id="ai"><i class="fas fa-desktop fa-2x"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <div class="player-input-container" id="player-modal">
+        <div class="player-input-box">
+            <h1 class="title">Tic Tac Toe</h1>
+            <p class="normal-text">Choose a username</p>
+
+            <form action="" class="row-wrapper">
+                <input type="text" placeholder="Player 1" id="player1-nameField">
+                <input type="text" placeholder="Player 2" id="player2-nameField">
+            </form>
+
+            <div class="button-wrapper">
+                <button id="player-submit">Submit</button>
+            </div>
+        </div>
+    </div>
+
     <div class="main-container">
         <section class="left">
             <h1 class="title">Tic Tac Toe</h1>
             <div class="player-box" id="player1">
-                <p>Player <span id="player1name"></span> </p>
-                <p>Token <span id="player1token"></span></p>
+                <p>Player: <span id="player1name"></span> </p>
+                <p>Token: <span id="player1token">X</span></p>
             </div>
             <div class="player-box" id="player2">
-                <p>Player <span id="player2name"></span> </p>
-                <p>Token <span id="player2token"></span></p>
+                <p>Player: <span id="player2name"></span> </p>
+                <p>Token: <span id="player2token">O</span></p>
             </div>
 
             <div class="button-wrapper">
@@ -32,6 +59,9 @@
         </section>
         <section class="right">
             <div class="board-wrapper" id="gameboard">
+                <div class="tile" id="tile0">
+                    <!-- <i class="fas fa-times fa-5x" aria-hidden="true"></i> -->
+                </div>
                 <div class="tile" id="tile1"></div>
                 <div class="tile" id="tile2"></div>
                 <div class="tile" id="tile3"></div>
@@ -40,7 +70,6 @@
                 <div class="tile" id="tile6"></div>
                 <div class="tile" id="tile7"></div>
                 <div class="tile" id="tile8"></div>
-                <div class="tile" id="tile9"></div>
             </div>
         </section>
     </div>
