@@ -8,8 +8,8 @@ body {
 }
 
 .menu-container,
-.player-input-container {
-    display: none;
+.player-input-container,
+.ai-input-container {
     position: fixed;
     left: 0;
     top: 0;
@@ -27,8 +27,13 @@ body {
     z-index: 5;
 }
 
+.ai-input-container {
+    z-index: 3;
+}
+
 .menu-box,
-.player-input-box {
+.player-input-box,
+.ai-input-box {
     background-color: #ffcda3;
     box-shadow: -5px 5px 0 #ee9595;
     max-width: 500px;
@@ -102,7 +107,7 @@ section.right {
     font-weight: 400;
 }
 
-.player-turn {
+.highlight {
     border: 4px solid #ef4f4f;
 }
 
