@@ -162,7 +162,7 @@ const gameBoard = (function() {
                 turn++
                 showTurn()
                 checkWinner()
-                checkTie()
+
             })
         })
     }
@@ -177,14 +177,12 @@ const gameBoard = (function() {
                     turn++
                     showTurn()
                     checkWinner()
-                    checkTie()
 
                     // AI Turn 
                     aiTurn()
                     turn++
                     showTurn()
                     checkWinner()
-                    checkTie()
                 }
             })
         });
@@ -279,19 +277,22 @@ const gameBoard = (function() {
     }
 
     function checkWinner() {
+        console.log(turn)
+        var winner = false
         winning_array.forEach(combo => {
             if (positions[combo[0]] == "X" && positions[combo[1]] == "X" && positions[combo[2]] == "X") {
+                winner = true
                 return xwinner()
             } else if (positions[combo[0]] == "O" && positions[combo[1]] == "O" && positions[combo[2]] == "O") {
+                winner = true
                 return owinner()
             }
         });
-    }
-
-    function checkTie() {
-        if (turn > 9) {
-            return tie();
+        console.log(winner)
+        if (winner == false && turn == 10) {
+            return tie()
         }
+
     }
 
     function xwinner() {
