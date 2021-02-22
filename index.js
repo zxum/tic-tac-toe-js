@@ -122,9 +122,10 @@ const aiInput = (function() {
 // GAMEBOARD MODULE
 
 const gameBoard = (function() {
-    positions = ["", "", "", "", "", "", "", "", ""];
-    turn = 1
-    winning_array = [
+    var positions = ["", "", "", "", "", "", "", "", ""];
+    var turn = 1
+    var winner = false
+    let winning_array = [
         [0, 1, 2],
         [3, 4, 5],
         [6, 7, 8],
@@ -179,10 +180,12 @@ const gameBoard = (function() {
                     checkWinner()
 
                     // AI Turn 
-                    aiTurn()
-                    turn++
-                    showTurn()
-                    checkWinner()
+                    if (winner == false) {
+                        aiTurn()
+                        turn++
+                        showTurn()
+                        checkWinner()
+                    }
                 }
             })
         });
@@ -276,9 +279,9 @@ const gameBoard = (function() {
         e.target.classList.add('nohover')
     }
 
+
     function checkWinner() {
         console.log(turn)
-        var winner = false
         winning_array.forEach(combo => {
             if (positions[combo[0]] == "X" && positions[combo[1]] == "X" && positions[combo[2]] == "X") {
                 winner = true
@@ -297,16 +300,20 @@ const gameBoard = (function() {
 
     function xwinner() {
         let player1name = document.getElementById('player1name').innerText || "X"
+        freezeBoard()
         alert(player1name + " wins!")
     }
 
     function owinner() {
         let player2name = document.getElementById('player2name').innerText || "O"
+        freezeBoard()
         alert(player2name + " wins!")
     }
 
     function tie() {
+        freezeBoard()
         alert("It's a tie!")
+
     }
 
     function clearBoard() {
@@ -317,6 +324,12 @@ const gameBoard = (function() {
         positions = ["", "", "", "", "", "", "", "", ""];
         turn = 1;
         showTurn()
+    }
+
+    function freezeBoard() {
+        tiles.forEach(tile => {
+            tile.classList.add("nohover")
+        })
     }
 
     return {
